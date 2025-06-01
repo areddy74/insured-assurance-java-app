@@ -45,6 +45,7 @@ jobs:
 
     - name: Trigger Jenkins Deployment
       run: |
+        echo "Triggering: $JENKINS_URL/job/$JENKINS_JOB_NAME/build"
         curl -X POST "$JENKINS_URL/job/$JENKINS_JOB_NAME/build" \
              --user "$JENKINS_USER:$JENKINS_API_TOKEN"
       env:
